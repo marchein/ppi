@@ -105,8 +105,4 @@ public class Number {
 		}
 		return s;
 	}
-	
-	public static void main(String[] args) {
-	    System.out.println(formatLikeDouble("rfgvbhbvt78tz6u.oi,k.k5gthz"));
-	}
 }
