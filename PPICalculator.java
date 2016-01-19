@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 @SuppressWarnings("serial")
 public class PPICalculator extends Frame implements ActionListener, WindowListener, FocusListener {
 
-	private Label breite_l, hoehe_l, groesse_l, ergebnis_l;
+    private Label breite_l, hoehe_l, groesse_l, ergebnis_l;
     private TextField breite_f, hoehe_f, groesse_f;
     private TextField ergebnis_f;
     private Button berechnen;
@@ -66,10 +66,6 @@ public class PPICalculator extends Frame implements ActionListener, WindowListen
         frame.setVisible(true);
          
     }
-         
-    public static void main(String[] args) {
-        new PPICalculator();
-    }
             
     public void infoBox(String infoMessage) {
     	ergebnis_f.setText("Kein Ergebnis");
@@ -94,7 +90,6 @@ public class PPICalculator extends Frame implements ActionListener, WindowListen
     	PPI display = new PPI(breite_f.getText(), hoehe_f.getText(), groesse_f.getText());
     	double ergebnis = display.berechnen();
         ergebnis_f.setText(Math.round(ergebnis) + " (" + ergebnis + ")");
-        
     }
     
     @Override
@@ -113,7 +108,7 @@ public class PPICalculator extends Frame implements ActionListener, WindowListen
     @Override
     public void windowClosing(WindowEvent e) {
         e.getWindow().dispose();
-        System.exit(0);
+        System.exit(1);
     }
     
     @Override
@@ -134,4 +129,7 @@ public class PPICalculator extends Frame implements ActionListener, WindowListen
     @Override
     public void windowOpened(WindowEvent arg0) { }
  
+    public static void main(String[] args) {
+    	new PPICalculator();
+    }
 }
