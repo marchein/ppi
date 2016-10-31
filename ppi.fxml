@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.FlowPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="519.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ppi.PPIController">
+   <children>
+      <Button layoutX="433.0" layoutY="161.0" mnemonicParsing="false" onAction="#calculateAction" text="Berechnen" />
+      <Button layoutX="14.0" layoutY="161.0" mnemonicParsing="false" onAction="#clearAction" text="Zurücksetzen" />
+      <Label layoutX="14.0" layoutY="14.0" text="Breite des Displays (in px):" />
+      <Label layoutX="14.0" layoutY="50.0" text="Höhe des Displays (in px):" />
+      <Label layoutX="14.0" layoutY="86.0" text="Größe des Displays (in Zoll):" />
+      <Label layoutX="14.0" layoutY="122.0" text="Ergebnis der Berechnung (PPI):" />
+      <TextField fx:id="width" layoutX="195.0" layoutY="10.0" prefHeight="25.0" prefWidth="315.0" promptText="Breite" />
+      <TextField fx:id="height" layoutX="195.0" layoutY="46.0" prefHeight="25.0" prefWidth="315.0" promptText="Höhe" />
+      <TextField fx:id="size" layoutX="195.0" layoutY="82.0" prefHeight="25.0" prefWidth="315.0" promptText="Größe" />
+      <TextField fx:id="ergebnis" editable="false" layoutX="195.0" layoutY="118.0" prefHeight="25.0" prefWidth="315.0" promptText="Ergebnis" />
+   </children>
+</Pane>
