@@ -2,7 +2,7 @@ package ppi;
 
 public class PPI {
 
-    private double x, y, z;
+    private double x, y, z, ppi;
 
     private String width, height, size;
 
@@ -38,7 +38,7 @@ public class PPI {
         }
     }
 
-    public double berechnen() throws IllegalArgumentException {
+    public double calc() throws IllegalArgumentException {
 
         if (x <= 0) {
             if (x < 1 || width == null) {
@@ -70,11 +70,14 @@ public class PPI {
             }
         }
 
+        ppi = (double) Math.round(Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) / z * 100000) / 100000;
+
         if (debug) {
             System.out.println("x = " + x + "\n" + "y = " + y + "\n" + "z = " + z);
+            System.out.println("PPI: " + ppi);
         }
 
-        return (double) Math.round(Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) / z * 100000) / 100000;
+        return ppi;
     }
 
     public static double removeAllNonNumber(String str, String type) {

@@ -5,6 +5,8 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 
 public class PPIController implements Initializable {
@@ -21,19 +23,25 @@ public class PPIController implements Initializable {
 
     public void calculateAction() {
         try {
-            calc();
-        } catch (IllegalArgumentException e) {
-            ergebnis.setText(e.getMessage());
-        } catch (ArithmeticException e) {
-            ergebnis.setText(e.getMessage());
+            calcutePPI();
         } catch (Exception e) {
-            ergebnis.setText(e.getMessage());
+            showError(e.getMessage());
         }
     }
 
-    public void calc() throws Exception {
+    public void showError(String error) {
+        Alert alert = new Alert(AlertType.ERROR);
+        String title = new String("Fehler");
+        String message = new String(error);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    public void calcutePPI() throws Exception {
         PPI display = new PPI(width.getText(), height.getText(), size.getText());
-        double ergebnisNumber = display.berechnen();
+        double ergebnisNumber = display.calc();
         ergebnis.setText(Math.round(ergebnisNumber) + " (" + ergebnisNumber + ")");
     }
 

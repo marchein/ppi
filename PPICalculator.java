@@ -15,10 +15,11 @@ public class PPICalculator extends Application {
     public void start(Stage primaryStage) throws Exception {
         try {
             Pane root = FXMLLoader.load(getClass().getResource("ppi.fxml"));
-            Scene scene = new Scene(root, 519, 200);
+            Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("PPI Rechner");
             primaryStage.getIcons().add(new Image("/ppi/ppi.jpg"));
+            primaryStage.resizableProperty().set(false);
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
