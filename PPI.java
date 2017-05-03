@@ -42,7 +42,7 @@ public class PPI {
 
         if (x <= 0) {
             if (x < 1 || width == null) {
-                throw new IllegalArgumentException("Die Breite kann nicht kleiner als 1 sein.");
+                throw new IllegalArgumentException("The width can not be smaller than 1.");
             } else {
                 x = x * (-1);
                 x = Double.parseDouble(x + "");
@@ -52,7 +52,7 @@ public class PPI {
 
         if (y <= 0) {
             if (y < 1 || height == null) {
-                throw new IllegalArgumentException("Die Höhe kann nicht kleiner als 1 sein.");
+                throw new IllegalArgumentException("The height can not be smaller than 1.");
             } else {
                 y = y * (-1);
                 y = Double.parseDouble(y + "");
@@ -62,7 +62,7 @@ public class PPI {
 
         if (z <= 0) {
             if (z <= 0) {
-                throw new ArithmeticException("Die Größe des Displays darf nicht 0 sein.");
+                throw new ArithmeticException("The size can not be smaller than 0.");
             } else {
                 z = z * (-1);
                 z = Double.parseDouble(z + "");
