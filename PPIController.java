@@ -12,13 +12,13 @@ import javafx.scene.control.TextField;
 public class PPIController implements Initializable {
 
     @FXML
-    private TextField width, height, size, ergebnis;
+    private TextField width, height, size, result;
 
     public void clearAction() {
         width.clear();
         height.clear();
         size.clear();
-        ergebnis.setText("Bitte Werte angeben.");
+        result.setText("Please enter values above");
     }
 
     public void calculateAction() {
@@ -31,7 +31,7 @@ public class PPIController implements Initializable {
 
     public void showError(String error) {
         Alert alert = new Alert(AlertType.ERROR);
-        String title = new String("Fehler");
+        String title = new String("Error");
         String message = new String(error);
         alert.setTitle(title);
         alert.setHeaderText(null);
@@ -41,13 +41,13 @@ public class PPIController implements Initializable {
 
     public void calcutePPI() throws Exception {
         PPI display = new PPI(width.getText(), height.getText(), size.getText());
-        double ergebnisNumber = display.calc();
-        ergebnis.setText(Math.round(ergebnisNumber) + " (" + ergebnisNumber + ")");
+        double resultNumber = display.calc();
+        result.setText(Math.round(resultNumber) + " (" + resultNumber + ")");
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ergebnis.setText("Bitte Werte angeben.");
+        result.setText("Please enter values above");
     }
 
 }

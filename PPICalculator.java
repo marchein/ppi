@@ -17,7 +17,7 @@ public class PPICalculator extends Application {
             Pane root = FXMLLoader.load(getClass().getResource("ppi.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("PPI Rechner");
+            primaryStage.setTitle("PPI Calculator");
             primaryStage.getIcons().add(new Image("/ppi/ppi.jpg"));
             primaryStage.resizableProperty().set(false);
             primaryStage.show();
