@@ -1,5 +1,3 @@
-package ppi;
-
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -14,11 +12,11 @@ public class PPICalculator extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            Pane root = FXMLLoader.load(getClass().getResource("ppi.fxml"));
+            Pane root = FXMLLoader.load(getClass().getClassLoader().getResource("ppi.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("PPI Calculator");
-            primaryStage.getIcons().add(new Image("/ppi/ppi.jpg"));
+            primaryStage.getIcons().add(new Image("file:ppi.jpg"));
             primaryStage.resizableProperty().set(false);
             primaryStage.show();
         } catch (IOException e) {

@@ -1,8 +1,8 @@
-package ppi;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -45,9 +45,21 @@ public class PPIController implements Initializable {
         result.setText(Math.round(resultNumber) + " (" + resultNumber + ")");
     }
 
+    public void checkEntrys() {
+        if(width.getText().length() >= 2 && height.getText().length() >= 2 && size.getText().length() >= 1 && PPI.removeAllNonNumber(String.valueOf(size.getText()), "double") > 0) {
+            calculateAction();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         result.setText("Please enter values above");
+        addCheckEntrys(new TextField[]{width, height, size});
     }
 
+    public void addCheckEntrys(TextField[] fields) {
+        for(TextField field: fields) {
+            field.setOnKeyReleased(e -> checkEntrys());
+        }
+    }
 }

@@ -1,5 +1,3 @@
-package ppi;
-
 public class Number {
 	
 	private static int firstDot(String s) {

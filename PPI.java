@@ -1,12 +1,8 @@
-package ppi;
-
 public class PPI {
 
     private double x, y, z, ppi;
 
     private String width, height, size;
-
-    public boolean debug = false;
 
     public PPI(String breite, String hoehe, String groesse) {
 
@@ -22,10 +18,6 @@ public class PPI {
         }
         try {
             y = Double.parseDouble(height);
-            if (y == 9000) {
-                debug = true;
-                y = 1080.0;
-            }
         } catch (NumberFormatException n) {
             System.out.println(n.getMessage());
             y = 0;
@@ -70,14 +62,7 @@ public class PPI {
             }
         }
 
-        ppi = (double) Math.round(Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) / z * 100000) / 100000;
-
-        if (debug) {
-            System.out.println("x = " + x + "\n" + "y = " + y + "\n" + "z = " + z);
-            System.out.println("PPI: " + ppi);
-        }
-
-        return ppi;
+        return (double) Math.round(Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) / z * 100000) / 100000;
     }
 
     public static double removeAllNonNumber(String str, String type) {
