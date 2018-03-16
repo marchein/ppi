@@ -1,13 +1,14 @@
+package ppi;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
+import ppi.PPI;
 
 public class PPIController implements Initializable {
 
@@ -46,7 +47,7 @@ public class PPIController implements Initializable {
     }
 
     public void checkEntrys() {
-        if(width.getText().length() >= 2 && height.getText().length() >= 2 && size.getText().length() >= 1 && PPI.removeAllNonNumber(String.valueOf(size.getText()), "double") > 0) {
+        if (width.getText().length() >= 2 && height.getText().length() >= 2 && size.getText().length() >= 1 && PPI.removeAllNonNumber(String.valueOf(size.getText()), "double") > 0) {
             calculateAction();
         }
     }
@@ -54,11 +55,11 @@ public class PPIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         result.setText("Please enter values above");
-        addCheckEntrys(new TextField[]{width, height, size});
+        addCheckEntrys(new TextField[] { width, height, size });
     }
 
     public void addCheckEntrys(TextField[] fields) {
-        for(TextField field: fields) {
+        for (TextField field : fields) {
             field.setOnKeyReleased(e -> checkEntrys());
         }
     }

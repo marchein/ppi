@@ -1,6 +1,8 @@
+package ppi;
+
 public class PPI {
 
-    private double x, y, z, ppi;
+    private double x, y, z;
 
     private String width, height, size;
 
